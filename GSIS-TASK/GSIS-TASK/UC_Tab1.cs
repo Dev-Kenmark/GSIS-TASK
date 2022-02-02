@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace GSIS_TASK
 {
-    public partial class Form2 : Form
+    public partial class UC_Tab1 : UserControl
     {
-        public Form2()
+        public UC_Tab1()
         {
             InitializeComponent();
         }
