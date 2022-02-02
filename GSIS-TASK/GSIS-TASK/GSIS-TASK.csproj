@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>GSIS_TASK</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>GSIS_TASK.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +22,14 @@
 
   <ItemGroup>
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
-    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

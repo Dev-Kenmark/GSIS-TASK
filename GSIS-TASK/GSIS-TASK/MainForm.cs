@@ -32,10 +32,6 @@ namespace GSIS_TASK
             AddUserControl(user1);
         }
 
-        private void pnlMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -49,10 +45,6 @@ namespace GSIS_TASK
             AddUserControl(user1);
         }
 
-        private void lblHead_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
