@@ -1,7 +1,7 @@
 ﻿
 namespace GSIS_TASK
 {
-    partial class sd
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -12,7 +12,7 @@ namespace GSIS_TASK
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-      
+
 
         #region Windows Form Designer generated code
 
@@ -22,47 +22,13 @@ namespace GSIS_TASK
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panelContainer = new System.Windows.Forms.Panel();
             this.btnTab1 = new System.Windows.Forms.Button();
             this.btnTab2 = new System.Windows.Forms.Button();
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(816, 84);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(-6, -8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 89);
-            this.label2.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(129, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(735, 89);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "ANG SAYA SA ALLCARD";
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Location = new System.Drawing.Point(232, 178);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(444, 296);
-            this.panelContainer.TabIndex = 9;
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lblHead = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // btnTab1
             // 
@@ -82,18 +48,75 @@ namespace GSIS_TASK
             this.btnTab2.Text = "Date";
             this.btnTab2.UseVisualStyleBackColor = true;
             // 
-            // Form1
-           
+            // pnlMain
+            // 
+            this.pnlMain.Location = new System.Drawing.Point(47, 169);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(933, 490);
+            this.pnlMain.TabIndex = 0;
+            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Font = new System.Drawing.Font("Sylfaen", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(50, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 47);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Tab 1";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.Font = new System.Drawing.Font("Sylfaen", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(169, 104);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 47);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Tab 2";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblHead
+            // 
+            this.lblHead.AutoSize = true;
+            this.lblHead.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHead.Location = new System.Drawing.Point(373, 26);
+            this.lblHead.Name = "lblHead";
+            this.lblHead.Size = new System.Drawing.Size(344, 32);
+            this.lblHead.TabIndex = 3;
+            this.lblHead.Text = "Allcard Tech Incorporation";
+            this.lblHead.Click += new System.EventHandler(this.lblHead_Click);
+            // 
+            // MainForm
+            // 
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(1066, 671);
+            this.Controls.Add(this.lblHead);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pnlMain);
+            this.Name = "MainForm";
+            this.Text = "Main Form";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panelContainer;
+
         private System.Windows.Forms.Button btnTab1;
         private System.Windows.Forms.Button btnTab2;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblHead;
     }
 }
 

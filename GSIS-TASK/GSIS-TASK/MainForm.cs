@@ -10,40 +10,49 @@ using System.Windows.Forms;
 
 namespace GSIS_TASK
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            UC_Tab1 user1 = new UC_Tab1();
-            addUserControl(user1);
-        }
-
        
-        private void addUserControl(UserControl userControl)
+        private void AddUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            //panelContainer.Controls.Clear();
-            //panelContainer.Controls.Add(userControl);
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(userControl);
             userControl.BringToFront();
 
         }
 
-        private void btnTab1_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             UC_Tab1 user1 = new UC_Tab1();
-            addUserControl(user1);
-        }
-        private void btnTab2_Click(object sender, EventArgs e)
-        {
-            UC_Tab2 user2 = new UC_Tab2();
-            addUserControl(user2);
+            AddUserControl(user1);
         }
 
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UC_Tab1 user1 = new UC_Tab1();
+            AddUserControl(user1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UC_Tab2 user1 = new UC_Tab2();
+            AddUserControl(user1);
+        }
+
+        private void lblHead_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
