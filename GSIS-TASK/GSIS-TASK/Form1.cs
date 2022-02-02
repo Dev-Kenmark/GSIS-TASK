@@ -21,13 +21,10 @@ namespace GSIS_TASK
         {
 
         }
-<<<<<<< HEAD
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-=======
->>>>>>> eb9adde3e72899b27eb8b984ef9646029223f09d
     }
 }

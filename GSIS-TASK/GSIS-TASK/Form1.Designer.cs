@@ -81,7 +81,7 @@ namespace GSIS_TASK
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(141, 499);
+            this.label1.Location = new System.Drawing.Point(183, 499);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(566, 89);
             this.label1.TabIndex = 2;
@@ -121,11 +121,8 @@ namespace GSIS_TASK
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
-<<<<<<< HEAD
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-=======
->>>>>>> eb9adde3e72899b27eb8b984ef9646029223f09d
     }
 }
 
