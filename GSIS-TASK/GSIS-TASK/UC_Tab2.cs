@@ -14,5 +14,10 @@ namespace GSIS_TASK
         {
             InitializeComponent();
         }
+
+        private void UC_Tab2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

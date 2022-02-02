@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "ZdeLOoZpBYkLVNZ/S++bUbYHkLlh9TCjxqUE+SejRCxoErp1SWV3mbvIWb6ryzWzwqAz7CYrrcaArDi9R7nvKg==",
+  "dgSpecHash": "jcaLcNu9WBpOPsIVRgdruDzvOh71YPP0t2h4Dk8j+bJ9z+CU91J3T8ImfUOae8NeDsOj/DL0ftFpe36iqn7TQg==",
   "success": true,
   "projectFilePath": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1000\\microsoft.office.interop.excel.15.0.4795.1000.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Office.Interop.Excel 15.0.4795.1000' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Office.Interop.Excel",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

@@ -17,3 +17,9 @@ E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\netcoreapp3.1\GSIS
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\netcoreapp3.1\GSIS-TASK.pdb
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\netcoreapp3.1\GSIS-TASK.genruntimeconfig.cache
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\netcoreapp3.1\GSIS-TASK.csproj.AssemblyReference.cache
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\netcoreapp3.1\ExcelDataReader.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Excel.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\netcoreapp3.1\GSIS-TASK.csproj.CopyComplete
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\netcoreapp3.1\Interop.ADOX.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\netcoreapp3.1\Interop.ADOX.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\netcoreapp3.1\GSIS-TASK.csproj.ResolveComReference.cache
