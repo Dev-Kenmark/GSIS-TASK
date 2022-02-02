@@ -42,9 +42,19 @@ namespace GSIS_TASK
 
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
+        private void TabPage2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("The info of the customer is saved", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
