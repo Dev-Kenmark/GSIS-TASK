@@ -1,7 +1,7 @@
 ﻿
 namespace GSIS_TASK
 {
-    partial class Form1
+    partial class sd
     {
         /// <summary>
         ///  Required designer variable.
@@ -12,14 +12,7 @@ namespace GSIS_TASK
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      
 
         #region Windows Form Designer generated code
 
@@ -35,7 +28,6 @@ namespace GSIS_TASK
             this.panelContainer = new System.Windows.Forms.Panel();
             this.btnTab1 = new System.Windows.Forms.Button();
             this.btnTab2 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
             // 
             // button4
             // 
@@ -54,7 +46,6 @@ namespace GSIS_TASK
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 89);
             this.label2.TabIndex = 6;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
@@ -72,7 +63,6 @@ namespace GSIS_TASK
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(444, 296);
             this.panelContainer.TabIndex = 9;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // btnTab1
             // 
@@ -82,7 +72,6 @@ namespace GSIS_TASK
             this.btnTab1.TabIndex = 9;
             this.btnTab1.Text = "Status";
             this.btnTab1.UseVisualStyleBackColor = true;
-            this.btnTab1.Click += new System.EventHandler(this.btnTab1_Click);
             // 
             // btnTab2
             // 
@@ -92,24 +81,9 @@ namespace GSIS_TASK
             this.btnTab2.TabIndex = 10;
             this.btnTab2.Text = "Date";
             this.btnTab2.UseVisualStyleBackColor = true;
-            this.btnTab2.Click += new System.EventHandler(this.btnTab2_Click);
             // 
             // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 618);
-            this.Controls.Add(this.btnTab2);
-            this.Controls.Add(this.panelContainer);
-            this.Controls.Add(this.btnTab1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+           
 
         }
 

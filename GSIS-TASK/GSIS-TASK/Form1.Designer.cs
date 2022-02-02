@@ -64,7 +64,6 @@ namespace GSIS_TASK
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
             // textBox1
             // 
@@ -82,7 +81,6 @@ namespace GSIS_TASK
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // button1
             // 
@@ -92,7 +90,6 @@ namespace GSIS_TASK
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -103,7 +100,6 @@ namespace GSIS_TASK
             this.label1.Size = new System.Drawing.Size(566, 89);
             this.label1.TabIndex = 2;
             this.label1.Text = "GITHUB PA MORE";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // button2
             // 
