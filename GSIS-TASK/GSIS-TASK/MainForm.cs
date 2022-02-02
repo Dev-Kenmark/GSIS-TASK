@@ -1,3 +1,4 @@
+<<<<<<< HEAD:GSIS-TASK/GSIS-TASK/MainForm.cs
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,3 +70,55 @@ namespace GSIS_TASK
 
     }
 }
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GSIS_TASK
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+>>>>>>> d0a01eb5459c5459a0bc609a7625dd59d9fef26f:GSIS-TASK/GSIS-TASK/Form1.cs
