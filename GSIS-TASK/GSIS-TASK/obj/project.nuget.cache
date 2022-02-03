@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Sm1r0spCYLSAHXBSGCmKJADA3WLKYNPg9dlx74qY7G/IMosVyF0FbRqzFxKwu1p/qZvlrJfO7Ud2FXQOVvQjyw==",
+  "dgSpecHash": "hnVtmQIO0Hi/H0uuLUO5JVKjM+Ut4lLkB0aWllEDDPn0MB5w14qq+7uakUjxP9kons46loGnDskApxFi5j1YHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mac\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

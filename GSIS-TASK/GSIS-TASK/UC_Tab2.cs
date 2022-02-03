@@ -8,11 +8,21 @@ using System.Windows.Forms;
 
 namespace GSIS_TASK
 {
-    public partial class Form2 : Form
+    public partial class UC_Tab2 : UserControl
     {
-        public Form2()
+        public UC_Tab2()
         {
             InitializeComponent();
+        }
+
+        private void UC_Tab2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
