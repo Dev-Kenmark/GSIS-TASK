@@ -11,6 +11,8 @@ namespace GSIS_TASK
     public partial class UC_Tab1 : UserControl
     {
         DataTableCollection tableCollection;
+        private static string dbasefile = AppDomain.CurrentDomain.BaseDirectory + "\\dbFile";
+        public static string connString;
         public UC_Tab1()
         {
             InitializeComponent();
@@ -56,11 +58,45 @@ namespace GSIS_TASK
             }           
            
         }
- 
+
+        public static void InitializeFile()
+        {
+            if (!File.Exists(dbasefile))
+            {
+                StreamWriter sw = new StreamWriter(dbasefile);
+                sw.WriteLine("");
+                sw.Dispose();
+                sw.Close();
+            }
+        }
+
+        public static void Write(string strData)
+        {
+            StreamWriter sw = new StreamWriter(dbasefile);
+            sw.WriteLine(strData);
+            sw.Dispose();
+            sw.Close();
+        }
+
+        public static string Read()
+        {
+            if (!File.Exists(dbasefile))
+            {
+                return "";
+            }
+            StreamReader sr = new StreamReader(dbasefile);
+            string str = sr.ReadToEnd();
+            sr.Dispose();
+            sr.Close();
+
+            return str.Trim();
+        }
 
         private void UC_Tab1_Load(object sender, EventArgs e)
         {
-
+            InitializeFile();
+            connString = Read();
+            
         }
     }
 }

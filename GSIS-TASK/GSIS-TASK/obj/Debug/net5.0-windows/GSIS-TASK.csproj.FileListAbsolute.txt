@@ -25,3 +25,30 @@ E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSI
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.genruntimeconfig.cache
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ExcelDataReader.DataSet.dll
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.AssemblyReference.cache
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.exe
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.deps.json
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.runtimeconfig.json
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.runtimeconfig.dev.json
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ref\GSIS-TASK.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.pdb
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ExcelDataReader.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ExcelDataReader.DataSet.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\Microsoft.Office.Interop.Excel.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.AssemblyReference.cache
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\Interop.ADOX.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.ResolveComReference.cache
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.Form1.resources
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.MainForm.resources
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.UC_Tab1.resources
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.UC_Tab2.resources
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.GenerateResource.cache
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.AssemblyInfoInputs.cache
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.AssemblyInfo.cs
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.CopyComplete
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\ref\GSIS-TASK.dll
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.pdb
+C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.genruntimeconfig.cache
