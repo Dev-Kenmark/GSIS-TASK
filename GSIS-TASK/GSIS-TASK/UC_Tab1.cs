@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Windows;
 using System.Data;
-using System.Globalization;
-using Microsoft.Office.Interop.Excel;
 
 using ExcelLibrary.SpreadSheet;
 using Workbook = ExcelLibrary.SpreadSheet.Workbook;
@@ -12,8 +9,11 @@ using System.Data.SqlClient;
 using System.IO;
 using ExcelDataReader;
 using DataTable = System.Data.DataTable;
-using ClosedXML.Excel;
-using System.Collections.Generic;
+
+using ExcelLibrary.SpreadSheet;
+using ExcelLibrary.CompoundDocumentFormat;
+using System.Diagnostics;
+
 
 namespace GSIS_TASK
 {
@@ -140,7 +140,6 @@ namespace GSIS_TASK
         {
 
         }
-
         private void btnImport_Click(object sender, EventArgs e)
         {
             try
@@ -149,37 +148,62 @@ namespace GSIS_TASK
                
                 if (result == DialogResult.Yes)
                 {
-                    DataTable dt = new DataTable();
+               
 
-                    //Adding the Columns
-                    foreach (DataGridViewColumn column in dataGridView1.Columns)
-                    {
-                        dt.Columns.Add(column.HeaderText, column.ValueType);
-                    }
+                   
+                        string file = AppDomain.CurrentDomain.BaseDirectory + "Exported_with_Date_Range_" + DateTime.Now.ToString("MM-dd-yyy") + ".xls";
+                        Workbook workbook = new Workbook();
+                        Worksheet worksheet = new Worksheet("First Sheet");
+                        worksheet.Cells[0, 0] = new Cell("CRN NUMBER");
+                        worksheet.Cells[0, 1] = new Cell("FIRSTNAME");
+                        worksheet.Cells[0, 2] = new Cell("MIDDLENAME"); 
+                        worksheet.Cells[0, 3] = new Cell("LASTNAME");
+                        worksheet.Cells[0, 4] = new Cell("CARD ID #");
+                        worksheet.Cells[0, 5] = new Cell("GSIS ID #");
+                        worksheet.Cells[0, 6] = new Cell("BRANCH/OFFICENAME");
+                        worksheet.Cells[0, 7] = new Cell("UMID REFERENCE"); 
+                        worksheet.Cells[0, 8] = new Cell("EMBOSSING FILE");
+                        worksheet.Cells[0, 9] = new Cell("STATUS 1");
+                        worksheet.Cells[0, 10] = new Cell("STATUS 2");                        
+                  
+                        int j = 0;
+                        int i = 1;
 
-                    //Adding the Rows
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        dt.Rows.Add();
-                        foreach (DataGridViewCell cell in row.Cells)
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
                         {
-                            dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
+                            //MessageBox.Show(row.Cells[j].Value.ToString());
+                            worksheet.Cells[i, j] = new Cell(row.Cells[j]?.Value?.ToString());
+                            worksheet.Cells[i, j + 1] = new Cell(row.Cells[j + 1]?.Value?.ToString());
+                            worksheet.Cells[i, j + 2] = new Cell(row.Cells[j + 2]?.Value?.ToString()); 
+                            worksheet.Cells[i, j + 3] = new Cell(row.Cells[j + 3]?.Value?.ToString());
+                            worksheet.Cells[i, j + 4] = new Cell(row.Cells[j + 4]?.Value?.ToString());
+                            worksheet.Cells[i, j + 5] = new Cell(row.Cells[j + 5]?.Value?.ToString()); 
+                            worksheet.Cells[i, j + 6] = new Cell(row.Cells[j + 6]?.Value?.ToString());
+                            worksheet.Cells[i, j + 7] = new Cell(row.Cells[j + 7]?.Value?.ToString());
+                            worksheet.Cells[i, j + 8] = new Cell(row.Cells[j + 8]?.Value?.ToString());
+                            worksheet.Cells[i, j + 9] = new Cell(row.Cells[j + 11]?.Value?.ToString());
+                            worksheet.Cells[i, j + 10] = new Cell(row.Cells[j + 12]?.Value?.ToString());
+
+                            worksheet.Cells.ColumnWidth[0, 1] = 3000; 
+                            i += 1;
                         }
-                    }
+                        workbook.Worksheets.Add(worksheet);
+                        workbook.Save(file);
+                        Workbook book = Workbook.Load(file);
+                        Worksheet sheet = book.Worksheets[0];
 
-                    //Exporting to Excel
-                    string folderPath = "C:\\Excel\\";
-                    if (!Directory.Exists(folderPath))
-                    {
-                        Directory.CreateDirectory(folderPath);
-                    }
-                    using (XLWorkbook wb = new XLWorkbook())
-                    {
-                        wb.Worksheets.Add(dt, "GSIS");
-                        wb.SaveAs(folderPath + "GSIS_Data.xlsx");
-                    }
+                        for (int rowIndex = sheet.Cells.FirstRowIndex; rowIndex <= sheet.Cells.LastRowIndex; rowIndex++)
+                        {
+                            Row row = sheet.Cells.GetRow(rowIndex);
+                            for (int colIndex = row.FirstColIndex; colIndex <= row.LastColIndex; colIndex++)
+                            {
+                                Cell cell = row.GetCell(colIndex);
+                            }
+                        }
+                        MessageBox.Show("Succesfully ", "Import Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 
+                   
 
-                    MessageBox.Show("Succesfully ", "Import Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
