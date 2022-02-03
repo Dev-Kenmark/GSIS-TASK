@@ -24,7 +24,6 @@ E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\ref
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.pdb
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.genruntimeconfig.cache
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ExcelDataReader.DataSet.dll
-E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.AssemblyReference.cache
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.exe
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.deps.json
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\GSIS-TASK.runtimeconfig.json
@@ -52,9 +51,22 @@ C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\ref\GSIS-TASK.dll
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.pdb
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.genruntimeconfig.cache
+
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\DocumentFormat.OpenXml.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ExcelLibrary.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ClosedXML.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ExcelNumberFormat.dll
+
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Charlie\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+
