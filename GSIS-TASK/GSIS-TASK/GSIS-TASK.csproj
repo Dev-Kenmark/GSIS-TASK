@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>GSIS_TASK</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <StartupObject>GSIS_TASK.Program</StartupObject>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

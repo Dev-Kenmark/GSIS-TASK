@@ -82,7 +82,7 @@ namespace GSIS_TASK
             // 
             // MainForm
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ClientSize = new System.Drawing.Size(954, 671);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

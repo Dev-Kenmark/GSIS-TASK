@@ -24,3 +24,4 @@ E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\ref
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.pdb
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.genruntimeconfig.cache
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ExcelDataReader.DataSet.dll
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.csproj.AssemblyReference.cache
