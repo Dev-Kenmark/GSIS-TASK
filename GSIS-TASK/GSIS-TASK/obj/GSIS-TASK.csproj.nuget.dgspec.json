@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {}
+    "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {
+    "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
+        "projectUniqueName": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
         "projectName": "GSIS-TASK",
-        "projectPath": "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
-        "packagesPath": "C:\\Users\\Charlie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\obj\\",
+        "projectPath": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Charlie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +44,14 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.95.4, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            },
             "ExcelDataReader": {
               "target": "Package",
               "version": "[3.6.0, )"
@@ -51,6 +59,14 @@
             "ExcelDataReader.DataSet": {
               "target": "Package",
               "version": "[3.6.0, )"
+            },
+            "ExcelLibrary": {
+              "target": "Package",
+              "version": "[1.2011.7.31, )"
+            },
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1000, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

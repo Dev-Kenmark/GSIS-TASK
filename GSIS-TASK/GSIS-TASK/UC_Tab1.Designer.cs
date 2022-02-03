@@ -31,12 +31,11 @@ namespace GSIS_TASK
         {
             this.btnUpload = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,11 +58,6 @@ namespace GSIS_TASK
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -73,15 +67,17 @@ namespace GSIS_TASK
             this.dataGridView1.Size = new System.Drawing.Size(882, 406);
             this.dataGridView1.TabIndex = 1;
             // 
-            // button2
+            // btnImport
             // 
-            this.button2.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(378, 499);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 34);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Save Extracted File";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnImport.BackColor = System.Drawing.Color.White;
+            this.btnImport.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnImport.Location = new System.Drawing.Point(378, 488);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(166, 45);
+            this.btnImport.TabIndex = 2;
+            this.btnImport.Text = "Import File";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // label1
             // 
@@ -101,6 +97,10 @@ namespace GSIS_TASK
             this.txtFileName.Size = new System.Drawing.Size(438, 23);
             this.txtFileName.TabIndex = 4;
             // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            // 
             // UC_Tab1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -108,13 +108,12 @@ namespace GSIS_TASK
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(79)))), ((int)(((byte)(102)))));
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnUpload);
             this.Name = "UC_Tab1";
-            this.Size = new System.Drawing.Size(915, 547);
+            this.Size = new System.Drawing.Size(915, 565);
             this.Load += new System.EventHandler(this.UC_Tab1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -125,10 +124,10 @@ namespace GSIS_TASK
 
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFileName;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
