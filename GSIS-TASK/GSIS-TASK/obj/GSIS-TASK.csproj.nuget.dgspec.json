@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[3.6.0, )"
             },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            },
             "System.Text.Encoding.CodePages": {
               "target": "Package",
               "version": "[5.0.0, )"

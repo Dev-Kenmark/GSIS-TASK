@@ -5,7 +5,7 @@ using System.IO;
 using ExcelDataReader;
 using System.Data;
 using System.Text;
-
+using System.Data.SqlClient;
 namespace GSIS_TASK
 {
     public partial class UC_Tab1 : UserControl
@@ -13,6 +13,7 @@ namespace GSIS_TASK
         DataTableCollection tableCollection;
         private static string dbasefile = AppDomain.CurrentDomain.BaseDirectory + "\\dbFile";
         public static string connString;
+        public static SqlConnection con = new SqlConnection(connString);
         public UC_Tab1()
         {
             InitializeComponent();
