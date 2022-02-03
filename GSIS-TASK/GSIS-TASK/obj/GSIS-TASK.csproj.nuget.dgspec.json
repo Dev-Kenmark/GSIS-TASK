@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {}
+    "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {
+    "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
+        "projectUniqueName": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
         "projectName": "GSIS-TASK",
-        "projectPath": "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
-        "packagesPath": "C:\\Users\\Charlie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Charlie\\Documents\\GitHub\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\obj\\",
+        "projectPath": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Unity Project Repo\\GSIS-TASK\\GSIS-TASK\\GSIS-TASK\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Charlie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
