@@ -60,13 +60,13 @@ namespace GSIS_TASK
                             DataTable dt = tableCollection[0];
                             dataGridView1.DataSource = dt;
 
-                            dataGridView1.Columns[9].HeaderText = "DONE";
-                            dataGridView1.Columns[10].HeaderText = "CHECKING";
+                            /*dataGridView1.Columns[9].HeaderText = "DONE";
+                            dataGridView1.Columns[10].HeaderText = "CHECKING";*/
 
 
 
                         }
-                        AddARow();
+                        //AddARow();
                     }
                 }
             }
@@ -84,13 +84,13 @@ namespace GSIS_TASK
             dtable.Columns.Add(new DataColumn("STATUS 2"));
            
             dataGridView1.DataSource = dtable;
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+           
+            /*foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Cells["STATUS 1"].Value = "KM";
                 row.Cells["STATUS 2"].Value = "KM";
 
-            }
+            }*/
             
             dtable.AcceptChanges();
 
@@ -142,6 +142,34 @@ namespace GSIS_TASK
         }
         private void btnImport_Click(object sender, EventArgs e)
         {
+            using (SqlConnection conn = new SqlConnection(connString))
+
+            {
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    conn.Open();
+                    dataGridView1.AllowUserToAddRows = false;
+                    var command = conn.CreateCommand();
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.CommandText = "[UbpTbl].[dbo].[spUBTable_Insert]";
+                        command.Parameters.AddWithValue("@CRN_NUMBER", dataGridView1.Rows[i].Cells[0].Value.ToString());
+                        command.Parameters.AddWithValue("@FIRSTNAME", dataGridView1.Rows[i].Cells[1].Value.ToString());
+                        command.Parameters.AddWithValue("@MIDDLENAME", dataGridView1.Rows[i].Cells[2].Value.ToString());
+                        command.Parameters.AddWithValue("@LASTNAME", dataGridView1.Rows[i].Cells[3].Value.ToString());
+                        command.Parameters.AddWithValue("@CARD_ID#", dataGridView1.Rows[i].Cells[4].Value.ToString());
+                        command.Parameters.AddWithValue("@GSIS_ID#", dataGridView1.Rows[i].Cells[5].Value.ToString());
+                        command.Parameters.AddWithValue("@BRANCH_OFFICENAME", dataGridView1.Rows[i].Cells[6].Value.ToString());
+                        command.Parameters.AddWithValue("@UMID_REFERENCE", dataGridView1.Rows[i].Cells[7].Value.ToString());
+                        command.Parameters.AddWithValue("@EMBOSSING_FILE", dataGridView1.Rows[i].Cells[8].Value.ToString());
+                        //command.Parameters.AddWithValue("@STATUS_1", dataGridView1.Rows[i].Cells[11].Value.ToString());
+                        //command.Parameters.AddWithValue("@STATUS_2", dataGridView1.Rows[i].Cells[12].Value.ToString());
+
+                        command.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                }
+            }
             try
             {
                 DialogResult result = MessageBox.Show("Do you want to import an excel file?", "Import?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -149,9 +177,7 @@ namespace GSIS_TASK
                 if (result == DialogResult.Yes)
                 {
                
-
-                   
-                        string file = AppDomain.CurrentDomain.BaseDirectory + "Exported_with_Date_Range_" + DateTime.Now.ToString("MM-dd-yyy") + ".xls";
+                        string file = AppDomain.CurrentDomain.BaseDirectory + "Exported_with_Columns_" + DateTime.Now.ToString("MM-dd-yyy") + ".xls";
                         Workbook workbook = new Workbook();
                         Worksheet worksheet = new Worksheet("First Sheet");
                         worksheet.Cells[0, 0] = new Cell("CRN NUMBER");
@@ -163,45 +189,74 @@ namespace GSIS_TASK
                         worksheet.Cells[0, 6] = new Cell("BRANCH/OFFICENAME");
                         worksheet.Cells[0, 7] = new Cell("UMID REFERENCE"); 
                         worksheet.Cells[0, 8] = new Cell("EMBOSSING FILE");
-                        worksheet.Cells[0, 9] = new Cell("STATUS 1");
-                        worksheet.Cells[0, 10] = new Cell("STATUS 2");                        
+                        //worksheet.Cells[0, 9] = new Cell("STATUS 1");
+                        //worksheet.Cells[0, 10] = new Cell("STATUS 2");                        
                   
                         int j = 0;
                         int i = 1;
+                    using (SqlConnection conn = new SqlConnection(connString))
 
-                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        var command = conn.CreateCommand();
                         {
-                            //MessageBox.Show(row.Cells[j].Value.ToString());
-                            worksheet.Cells[i, j] = new Cell(row.Cells[j]?.Value?.ToString());
-                            worksheet.Cells[i, j + 1] = new Cell(row.Cells[j + 1]?.Value?.ToString());
-                            worksheet.Cells[i, j + 2] = new Cell(row.Cells[j + 2]?.Value?.ToString()); 
-                            worksheet.Cells[i, j + 3] = new Cell(row.Cells[j + 3]?.Value?.ToString());
-                            worksheet.Cells[i, j + 4] = new Cell(row.Cells[j + 4]?.Value?.ToString());
-                            worksheet.Cells[i, j + 5] = new Cell(row.Cells[j + 5]?.Value?.ToString()); 
-                            worksheet.Cells[i, j + 6] = new Cell(row.Cells[j + 6]?.Value?.ToString());
-                            worksheet.Cells[i, j + 7] = new Cell(row.Cells[j + 7]?.Value?.ToString());
-                            worksheet.Cells[i, j + 8] = new Cell(row.Cells[j + 8]?.Value?.ToString());
-                            worksheet.Cells[i, j + 9] = new Cell(row.Cells[j + 11]?.Value?.ToString());
-                            worksheet.Cells[i, j + 10] = new Cell(row.Cells[j + 12]?.Value?.ToString());
-
-                            worksheet.Cells.ColumnWidth[0, 1] = 3000; 
-                            i += 1;
-                        }
-                        workbook.Worksheets.Add(worksheet);
-                        workbook.Save(file);
-                        Workbook book = Workbook.Load(file);
-                        Worksheet sheet = book.Worksheets[0];
-
-                        for (int rowIndex = sheet.Cells.FirstRowIndex; rowIndex <= sheet.Cells.LastRowIndex; rowIndex++)
-                        {
-                            Row row = sheet.Cells.GetRow(rowIndex);
-                            for (int colIndex = row.FirstColIndex; colIndex <= row.LastColIndex; colIndex++)
+                            conn.Open();
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.CommandText = "[UbpTbl].[dbo].[spUBTable_Select]";
+                            command.ExecuteNonQuery();
+                            conn.Close();
+                            SqlDataAdapter data = new SqlDataAdapter(command); 
+                            DataTable dt = new DataTable();
+                            data.Fill(dt);
+                            foreach (DataRow row in dt.Rows)
                             {
-                                Cell cell = row.GetCell(colIndex);
+                                //DataRow row = drv.Row;
+                                //MessageBox.Show(row.Cells[j].Value.ToString());
+                                worksheet.Cells[i, j] = new Cell(row.ItemArray[j].ToString());
+                                worksheet.Cells[i, j + 1] = new Cell(row.ItemArray[j + 1].ToString());
+                                worksheet.Cells[i, j + 2] = new Cell(row.ItemArray[j + 2].ToString());
+                                worksheet.Cells[i, j + 3] = new Cell(row.ItemArray[j + 3].ToString());
+                                worksheet.Cells[i, j + 4] = new Cell(row.ItemArray[j + 4].ToString());
+                                worksheet.Cells[i, j + 5] = new Cell(row.ItemArray[j + 5].ToString());
+                                worksheet.Cells[i, j + 6] = new Cell(row.ItemArray[j + 6].ToString());
+                                worksheet.Cells[i, j + 7] = new Cell(row.ItemArray[j + 7].ToString());
+                                worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
+                                worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
+                                worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
+                                /*worksheet.Cells[i, j + 1] = new Cell(row.Cells[j + 1]?.Value?.ToString());
+                                worksheet.Cells[i, j + 2] = new Cell(row.Cells[j + 2]?.Value?.ToString()); 
+                                worksheet.Cells[i, j + 3] = new Cell(row.Cells[j + 3]?.Value?.ToString());
+                                worksheet.Cells[i, j + 4] = new Cell(row.Cells[j + 4]?.Value?.ToString());
+                                worksheet.Cells[i, j + 5] = new Cell(row.Cells[j + 5]?.Value?.ToString()); 
+                                worksheet.Cells[i, j + 6] = new Cell(row.Cells[j + 6]?.Value?.ToString());
+                                worksheet.Cells[i, j + 7] = new Cell(row.Cells[j + 7]?.Value?.ToString());
+                                worksheet.Cells[i, j + 8] = new Cell(row.Cells[j + 8]?.Value?.ToString());*/
+                                //worksheet.Cells[i, j + 9] = new Cell(row.Cells[j + 11]?.Value?.ToString());
+                                //worksheet.Cells[i, j + 10] = new Cell(row.Cells[j + 12]?.Value?.ToString());
+
+                                worksheet.Cells.ColumnWidth[0, 1] = 3000;
+                                i += 1;
                             }
+                            workbook.Worksheets.Add(worksheet);
+                            workbook.Save(file);
+                            Workbook book = Workbook.Load(file);
+                            Worksheet sheet = book.Worksheets[0];
+
+                            for (int rowIndex = sheet.Cells.FirstRowIndex; rowIndex <= sheet.Cells.LastRowIndex; rowIndex++)
+                            {
+                                Row row = sheet.Cells.GetRow(rowIndex);
+                                for (int colIndex = row.FirstColIndex; colIndex <= row.LastColIndex; colIndex++)
+                                {
+                                    Cell cell = row.GetCell(colIndex);
+                                }
+                            }
+                            MessageBox.Show("Succesfully ", "Import Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        MessageBox.Show("Succesfully ", "Import Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 
+                        conn.Open();
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.CommandText = "[UbpTbl].[dbo].[spUBTable_truncate]";
+                        command.ExecuteNonQuery();
+                        conn.Close();
+                    }
                    
 
                 }
