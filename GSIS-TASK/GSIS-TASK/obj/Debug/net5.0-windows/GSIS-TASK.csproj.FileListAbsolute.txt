@@ -105,3 +105,4 @@ C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-win
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\ref\GSIS-TASK.dll
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.pdb
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.genruntimeconfig.cache
+E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.Properties.Resources.resources

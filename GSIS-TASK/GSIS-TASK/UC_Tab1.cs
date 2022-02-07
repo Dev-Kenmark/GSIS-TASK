@@ -59,6 +59,7 @@ namespace GSIS_TASK
                         {
                             DataTable dt = tableCollection[0];
                             dataGridView1.DataSource = dt;
+                            btnImport.Enabled = true;
 
                             /*dataGridView1.Columns[9].HeaderText = "DONE";
                             dataGridView1.Columns[10].HeaderText = "CHECKING";*/
@@ -134,12 +135,29 @@ namespace GSIS_TASK
         {
             InitializeFile();
             connString = Read();
+            btnImport.Enabled = false;
         }
 
         private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
 
         }
+
+        private void txtFileName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(connString))
@@ -150,7 +168,7 @@ namespace GSIS_TASK
                     conn.Open();
                     dataGridView1.AllowUserToAddRows = false;
                     var command = conn.CreateCommand();
-                    {
+                    { 
                         command.CommandType = CommandType.StoredProcedure;
                         command.CommandText = "[UbpTbl].[dbo].[spUBTable_Insert]";
                         command.Parameters.AddWithValue("@CRN_NUMBER", dataGridView1.Rows[i].Cells[0].Value.ToString());

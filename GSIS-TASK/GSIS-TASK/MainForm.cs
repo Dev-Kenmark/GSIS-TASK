@@ -37,14 +37,31 @@ namespace GSIS_TASK
         {
             UC_Tab1 user1 = new UC_Tab1();
             AddUserControl(user1);
-        }
+            button1.ForeColor = Color.Black;
+            button1.BackColor = Color.FromArgb(255, 224, 192);
+            button2.ForeColor = Color.White;
+            button2.BackColor = Color.FromArgb(0, 64, 64);
+        } 
 
         private void button2_Click(object sender, EventArgs e)
         {
             UC_Tab2 user1 = new UC_Tab2();
             AddUserControl(user1);
+            button2.ForeColor = Color.Black;
+            button2.BackColor = Color.FromArgb(255, 224, 192);
+            button1.ForeColor = Color.White;
+            button1.BackColor = Color.FromArgb(0, 64, 64);
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
