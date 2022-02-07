@@ -158,6 +158,11 @@ namespace GSIS_TASK
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(connString))

@@ -42,18 +42,18 @@ namespace GSIS_TASK
             // 
             this.btnExport.BackColor = System.Drawing.Color.White;
             this.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnExport.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExport.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnExport.Location = new System.Drawing.Point(188, 167);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(166, 64);
             this.btnExport.TabIndex = 1;
-            this.btnExport.Text = "Export";
+            this.btnExport.Text = "Extract File";
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpFrom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpFrom.Location = new System.Drawing.Point(127, 47);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(303, 26);
@@ -62,7 +62,7 @@ namespace GSIS_TASK
             // 
             // dtpTo
             // 
-            this.dtpTo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpTo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpTo.Location = new System.Drawing.Point(127, 111);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(303, 26);

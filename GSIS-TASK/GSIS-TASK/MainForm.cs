@@ -62,6 +62,20 @@ namespace GSIS_TASK
         {
 
         }
+
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Do you want to exit the application?", "Exit?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(rs == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
 
