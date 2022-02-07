@@ -77,26 +77,26 @@ namespace GSIS_TASK
             }           
            
         }
-        private void AddARow()
-        {
-            DataTable dtable = (DataTable)dataGridView1.DataSource;
-            dtable.Columns.RemoveAt(11);
-            dtable.Columns.Add(new DataColumn("STATUS 1"));
-            dtable.Columns.Add(new DataColumn("STATUS 2"));
+        //private void AddARow()
+        //{
+        //    DataTable dtable = (DataTable)dataGridView1.DataSource;
+        //    dtable.Columns.RemoveAt(11);
+        //    dtable.Columns.Add(new DataColumn("STATUS 1"));
+        //    dtable.Columns.Add(new DataColumn("STATUS 2"));
            
-            dataGridView1.DataSource = dtable;
+        //    dataGridView1.DataSource = dtable;
            
-            /*foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Cells["STATUS 1"].Value = "KM";
-                row.Cells["STATUS 2"].Value = "KM";
+        //    /*foreach (DataGridViewRow row in dataGridView1.Rows)
+        //    {
+        //        row.Cells["STATUS 1"].Value = "KM";
+        //        row.Cells["STATUS 2"].Value = "KM";
 
-            }*/
+        //    }*/
             
-            dtable.AcceptChanges();
+        //    dtable.AcceptChanges();
 
 
-        }
+        //}
 
         public static void InitializeFile()
         {
@@ -175,7 +175,7 @@ namespace GSIS_TASK
                     var command = conn.CreateCommand();
                     { 
                         command.CommandType = CommandType.StoredProcedure;
-                        command.CommandText = "[UbpTbl].[dbo].[spUBTable_Insert]";
+                        command.CommandText = "[dbo].[spUBTable_Insert]";
                         command.Parameters.AddWithValue("@CRN_NUMBER", dataGridView1.Rows[i].Cells[0].Value.ToString());
                         command.Parameters.AddWithValue("@FIRSTNAME", dataGridView1.Rows[i].Cells[1].Value.ToString());
                         command.Parameters.AddWithValue("@MIDDLENAME", dataGridView1.Rows[i].Cells[2].Value.ToString());
@@ -232,7 +232,7 @@ namespace GSIS_TASK
                             {
                                 conn.Open();
                                 command.CommandType = CommandType.StoredProcedure;
-                                command.CommandText = "[UbpTbl].[dbo].[spUBTable_Select]";
+                                command.CommandText = "[dbo].[spUBTable_Select]";
                                 command.ExecuteNonQuery();
                                 conn.Close();
                                 SqlDataAdapter data = new SqlDataAdapter(command);
@@ -253,6 +253,7 @@ namespace GSIS_TASK
                                     worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
                                     worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
                                     worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
+                                    worksheet.Cells[i, j + 11] = new Cell(row.ItemArray[j + 11].ToString());
                                     /*worksheet.Cells[i, j + 1] = new Cell(row.Cells[j + 1]?.Value?.ToString());
                                     worksheet.Cells[i, j + 2] = new Cell(row.Cells[j + 2]?.Value?.ToString()); 
                                     worksheet.Cells[i, j + 3] = new Cell(row.Cells[j + 3]?.Value?.ToString());
@@ -284,7 +285,7 @@ namespace GSIS_TASK
                             }
                             conn.Open();
                             command.CommandType = CommandType.StoredProcedure;
-                            command.CommandText = "[UbpTbl].[dbo].[spUBTable_truncate]";
+                            command.CommandText = "[dbo].[spUBTable_truncate]";
                             command.ExecuteNonQuery();
                             conn.Close();
                         }
