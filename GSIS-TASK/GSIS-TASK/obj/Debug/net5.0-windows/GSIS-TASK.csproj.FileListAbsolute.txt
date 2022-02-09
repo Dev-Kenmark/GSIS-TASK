@@ -107,3 +107,11 @@ C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-win
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS-TASK.genruntimeconfig.cache
 E:\Unity Project Repo\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.Properties.Resources.resources
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.Properties.Resources.resources
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ZstdNet.dll

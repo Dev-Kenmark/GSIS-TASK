@@ -14,15 +14,18 @@ using ExcelLibrary.SpreadSheet;
 using ExcelLibrary.CompoundDocumentFormat;
 using System.Diagnostics;
 
-
+using MySql.Data;
+using MySql.Data.MySqlClient;
 namespace GSIS_TASK
 {
     public partial class UC_Tab1 : UserControl
     {
         DataTableCollection tableCollection;
         private static string dbasefile = AppDomain.CurrentDomain.BaseDirectory + "\\dbFile";
-        public static string connString;
+        private static string mysqldbasefile = AppDomain.CurrentDomain.BaseDirectory + "\\mysqldbFile";
+        public static string connString, mysqlconnString;
         public static SqlConnection con = new SqlConnection(connString);
+        public static MySqlConnection mcon; 
         int a, b;
         public string directory = System.AppDomain.CurrentDomain.BaseDirectory;
 
@@ -109,6 +112,17 @@ namespace GSIS_TASK
             }
         }
 
+        public static void MInitializeFile()
+        {
+            if (!File.Exists(mysqldbasefile))
+            {
+                StreamWriter sw = new StreamWriter(mysqldbasefile);
+                sw.WriteLine("");
+                sw.Dispose();
+                sw.Close();
+            }
+        }
+
         public static void Write(string strData)
         {
             StreamWriter sw = new StreamWriter(dbasefile);
@@ -131,10 +145,40 @@ namespace GSIS_TASK
             return str.Trim();
         }
 
+        public static void MWrite(string strData)
+        {
+            StreamWriter sw = new StreamWriter(mysqldbasefile);
+            sw.WriteLine(strData);
+            sw.Dispose();
+            sw.Close();
+        }
+
+        public static string MRead()
+        {
+            if (!File.Exists(mysqldbasefile))
+            {
+                return "";
+            }
+            StreamReader sr = new StreamReader(mysqldbasefile);
+            string str = sr.ReadToEnd();
+            sr.Dispose();
+            sr.Close();
+
+            return str.Trim();
+        }
+
         private void UC_Tab1_Load(object sender, EventArgs e)
         {
             InitializeFile();
+            MInitializeFile();
             connString = Read();
+            mysqlconnString = MRead();
+
+            mcon = new MySqlConnection(mysqlconnString);
+
+            mcon.Open();
+            mcon.Close();
+            //mysqlconnString = "server=DESKTOP-39L40B6;uid=root;pwd=1234;database=ubp_sss";
             btnImport.Enabled = false;
         }
 
@@ -176,6 +220,7 @@ namespace GSIS_TASK
                     { 
                         command.CommandType = CommandType.StoredProcedure;
                         command.CommandText = "[dbo].[spUBTable_Insert]";
+
                         command.Parameters.AddWithValue("@CRN_NUMBER", dataGridView1.Rows[i].Cells[0].Value.ToString());
                         command.Parameters.AddWithValue("@FIRSTNAME", dataGridView1.Rows[i].Cells[1].Value.ToString());
                         command.Parameters.AddWithValue("@MIDDLENAME", dataGridView1.Rows[i].Cells[2].Value.ToString());
@@ -195,7 +240,7 @@ namespace GSIS_TASK
             }
             try
             {
-                DialogResult result = MessageBox.Show("Do you want to import an excel file?", "Import?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Do you want to process an excel file?", "Import?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                
                 if (result == DialogResult.Yes)
                 {
@@ -238,51 +283,82 @@ namespace GSIS_TASK
                                 SqlDataAdapter data = new SqlDataAdapter(command);
                                 DataTable dt = new DataTable();
                                 data.Fill(dt);
-                                foreach (DataRow row in dt.Rows)
+
+
+
+                                using (MySqlConnection mconn = new MySqlConnection(mysqlconnString))
                                 {
-                                    //DataRow row = drv.Row;
-                                    //MessageBox.Show(row.Cells[j].Value.ToString());
-                                    worksheet.Cells[i, j] = new Cell(row.ItemArray[j].ToString());
-                                    worksheet.Cells[i, j + 1] = new Cell(row.ItemArray[j + 1].ToString());
-                                    worksheet.Cells[i, j + 2] = new Cell(row.ItemArray[j + 2].ToString());
-                                    worksheet.Cells[i, j + 3] = new Cell(row.ItemArray[j + 3].ToString());
-                                    worksheet.Cells[i, j + 4] = new Cell(row.ItemArray[j + 4].ToString());
-                                    worksheet.Cells[i, j + 5] = new Cell(row.ItemArray[j + 5].ToString());
-                                    worksheet.Cells[i, j + 6] = new Cell(row.ItemArray[j + 6].ToString());
-                                    worksheet.Cells[i, j + 7] = new Cell(row.ItemArray[j + 7].ToString());
-                                    worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
-                                    worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
-                                    worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
-                                    //dito ilalagay ung sa mysql
+                                    mconn.Open();
 
-                                    /*worksheet.Cells[i, j + 1] = new Cell(row.Cells[j + 1]?.Value?.ToString());
-                                    worksheet.Cells[i, j + 2] = new Cell(row.Cells[j + 2]?.Value?.ToString()); 
-                                    worksheet.Cells[i, j + 3] = new Cell(row.Cells[j + 3]?.Value?.ToString());
-                                    worksheet.Cells[i, j + 4] = new Cell(row.Cells[j + 4]?.Value?.ToString());
-                                    worksheet.Cells[i, j + 5] = new Cell(row.Cells[j + 5]?.Value?.ToString()); 
-                                    worksheet.Cells[i, j + 6] = new Cell(row.Cells[j + 6]?.Value?.ToString());
-                                    worksheet.Cells[i, j + 7] = new Cell(row.Cells[j + 7]?.Value?.ToString());
-                                    worksheet.Cells[i, j + 8] = new Cell(row.Cells[j + 8]?.Value?.ToString());*/
-                                    //worksheet.Cells[i, j + 9] = new Cell(row.Cells[j + 11]?.Value?.ToString());
-                                    //worksheet.Cells[i, j + 10] = new Cell(row.Cells[j + 12]?.Value?.ToString());
-
-                                    worksheet.Cells.ColumnWidth[0, 1] = 3000;
-                                    i += 1;
-                                }
-                                workbook.Worksheets.Add(worksheet);
-                                workbook.Save(file);
-                                Workbook book = Workbook.Load(file);
-                                Worksheet sheet = book.Worksheets[0];
-
-                                for (int rowIndex = sheet.Cells.FirstRowIndex; rowIndex <= sheet.Cells.LastRowIndex; rowIndex++)
-                                {
-                                    Row row = sheet.Cells.GetRow(rowIndex);
-                                    for (int colIndex = row.FirstColIndex; colIndex <= row.LastColIndex; colIndex++)
+                                    foreach (DataRow row in dt.Rows)
                                     {
-                                        Cell cell = row.GetCell(colIndex);
+                                        //DataRow row = drv.Row;
+                                        //MessageBox.Show(row.Cells[j].Value.ToString());
+                                        worksheet.Cells[i, j] = new Cell(row.ItemArray[j].ToString());
+                                        worksheet.Cells[i, j + 1] = new Cell(row.ItemArray[j + 1].ToString());
+                                        worksheet.Cells[i, j + 2] = new Cell(row.ItemArray[j + 2].ToString());
+                                        worksheet.Cells[i, j + 3] = new Cell(row.ItemArray[j + 3].ToString());
+                                        worksheet.Cells[i, j + 4] = new Cell(row.ItemArray[j + 4].ToString());
+                                        worksheet.Cells[i, j + 5] = new Cell(row.ItemArray[j + 5].ToString());
+                                        worksheet.Cells[i, j + 6] = new Cell(row.ItemArray[j + 6].ToString());
+                                        worksheet.Cells[i, j + 7] = new Cell(row.ItemArray[j + 7].ToString());
+                                        worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
+                                        worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
+                                        worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
+
+                                        try
+                                        {
+                                            //dito ilalagay ung sa mysql
+                                            var cmd = mconn.CreateCommand();
+                                            cmd.CommandType = CommandType.StoredProcedure;
+                                            cmd.CommandText = "sp_ExtractDR";
+                                            string xEbossFIle = row.ItemArray[j + 8].ToString();
+                                            cmd.Parameters.AddWithValue("_EmbossFile", xEbossFIle);
+                                            cmd.ExecuteNonQuery();
+
+                                            MySqlDataAdapter mdata = new MySqlDataAdapter(cmd);
+                                            DataTable mdt = new DataTable();
+                                            mdata.Fill(mdt);
+
+                                            worksheet.Cells[i, j + 11] = new Cell(mdt.Rows[0].ItemArray[0].ToString());
+                                            worksheet.Cells[i, j + 12] = new Cell(mdt.Rows[0].ItemArray[1].ToString());
+                                        }
+                                        catch (Exception ee)
+                                        {
+                                            MessageBox.Show(ee.Message);
+                                        }
+
+                                        /*worksheet.Cells[i, j + 1] = new Cell(row.Cells[j + 1]?.Value?.ToString());
+                                        worksheet.Cells[i, j + 2] = new Cell(row.Cells[j + 2]?.Value?.ToString()); 
+                                        worksheet.Cells[i, j + 3] = new Cell(row.Cells[j + 3]?.Value?.ToString());
+                                        worksheet.Cells[i, j + 4] = new Cell(row.Cells[j + 4]?.Value?.ToString());
+                                        worksheet.Cells[i, j + 5] = new Cell(row.Cells[j + 5]?.Value?.ToString()); 
+                                        worksheet.Cells[i, j + 6] = new Cell(row.Cells[j + 6]?.Value?.ToString());
+                                        worksheet.Cells[i, j + 7] = new Cell(row.Cells[j + 7]?.Value?.ToString());
+                                        worksheet.Cells[i, j + 8] = new Cell(row.Cells[j + 8]?.Value?.ToString());*/
+                                        //worksheet.Cells[i, j + 9] = new Cell(row.Cells[j + 11]?.Value?.ToString());
+                                        //worksheet.Cells[i, j + 10] = new Cell(row.Cells[j + 12]?.Value?.ToString());
+
+                                        worksheet.Cells.ColumnWidth[0, 1] = 3000;
+                                        i += 1;
                                     }
+                                    mconn.Close();
                                 }
-                                MessageBox.Show("Succesfully ", "Import Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    workbook.Worksheets.Add(worksheet);
+                                    workbook.Save(file);
+                                    Workbook book = Workbook.Load(file);
+                                    Worksheet sheet = book.Worksheets[0];
+
+                                    for (int rowIndex = sheet.Cells.FirstRowIndex; rowIndex <= sheet.Cells.LastRowIndex; rowIndex++)
+                                    {
+                                        Row row = sheet.Cells.GetRow(rowIndex);
+                                        for (int colIndex = row.FirstColIndex; colIndex <= row.LastColIndex; colIndex++)
+                                        {
+                                            Cell cell = row.GetCell(colIndex);
+                                        }
+                                    }
+                                MessageBox.Show("File successfully processed", "Sucessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             conn.Open();
                             command.CommandType = CommandType.StoredProcedure;
@@ -290,13 +366,12 @@ namespace GSIS_TASK
                             command.ExecuteNonQuery();
                             conn.Close();
                         }
-
                     }
                    }
                 }
             catch (Exception ex)
             {
-                MessageBox.Show("Error in import file: " + ex.Message);
+                MessageBox.Show("File failed to processed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.IO;
 using ExcelDataReader;
 using DataTable = System.Data.DataTable;
-
+using MySql.Data.MySqlClient;
 
 namespace GSIS_TASK
 {
@@ -22,8 +22,12 @@ namespace GSIS_TASK
             InitializeComponent();
         }
         private static string dbasefile = AppDomain.CurrentDomain.BaseDirectory + "\\dbFile";
-        public static string connString;
+        private static string mysqldbasefile = AppDomain.CurrentDomain.BaseDirectory + "\\mysqldbFile";
+        public static string connString, mysqlconnString;
+
         public static SqlConnection con = new SqlConnection(connString);
+        public static MySqlConnection mcon;
+
         public static string Read()
         {
             if (!File.Exists(dbasefile))
@@ -37,11 +41,30 @@ namespace GSIS_TASK
 
             return str.Trim();
         }
+        public static string MRead()
+        {
+            if (!File.Exists(mysqldbasefile))
+            {
+                return "";
+            }
+            StreamReader sr = new StreamReader(mysqldbasefile);
+            string str = sr.ReadToEnd();
+            sr.Dispose();
+            sr.Close();
+
+            return str.Trim();
+        }
+
         private void UC_Tab2_Load(object sender, EventArgs e)
         {
             dtpFrom.Value = DateTime.Now;
             dtpTo.Value = DateTime.Now;
             connString = Read();
+
+            mysqlconnString = MRead();
+            mcon = new MySqlConnection(mysqlconnString);
+            mcon.Open();
+            mcon.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,22 +120,53 @@ namespace GSIS_TASK
                                 worksheet.Cells[0, 10] = new Cell("STATUS 2");
                                 int j = 0;
                                 int i = 1;
+
                                 //DataTable dt = new DataTable();
-                                foreach (DataRow row in dt.Rows)
+
+                                //DITO
+                                using (MySqlConnection mconn = new MySqlConnection(mysqlconnString))
                                 {
-                                    worksheet.Cells[i, j] = new Cell(row.ItemArray[j].ToString());
-                                    worksheet.Cells[i, j + 1] = new Cell(row.ItemArray[j + 1].ToString());
-                                    worksheet.Cells[i, j + 2] = new Cell(row.ItemArray[j + 2].ToString());
-                                    worksheet.Cells[i, j + 3] = new Cell(row.ItemArray[j + 3].ToString());
-                                    worksheet.Cells[i, j + 4] = new Cell(row.ItemArray[j + 4].ToString());
-                                    worksheet.Cells[i, j + 5] = new Cell(row.ItemArray[j + 5].ToString());
-                                    worksheet.Cells[i, j + 6] = new Cell(row.ItemArray[j + 6].ToString());
-                                    worksheet.Cells[i, j + 7] = new Cell(row.ItemArray[j + 7].ToString());
-                                    worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
-                                    worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
-                                    worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
-                                    worksheet.Cells.ColumnWidth[0, 1] = 3000;
-                                    i += 1;
+                                    mconn.Open();
+                                    foreach (DataRow row in dt.Rows)
+                                    {
+                                        worksheet.Cells[i, j] = new Cell(row.ItemArray[j].ToString());
+                                        worksheet.Cells[i, j + 1] = new Cell(row.ItemArray[j + 1].ToString());
+                                        worksheet.Cells[i, j + 2] = new Cell(row.ItemArray[j + 2].ToString());
+                                        worksheet.Cells[i, j + 3] = new Cell(row.ItemArray[j + 3].ToString());
+                                        worksheet.Cells[i, j + 4] = new Cell(row.ItemArray[j + 4].ToString());
+                                        worksheet.Cells[i, j + 5] = new Cell(row.ItemArray[j + 5].ToString());
+                                        worksheet.Cells[i, j + 6] = new Cell(row.ItemArray[j + 6].ToString());
+                                        worksheet.Cells[i, j + 7] = new Cell(row.ItemArray[j + 7].ToString());
+                                        worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
+                                        worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
+                                        worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
+                                        worksheet.Cells.ColumnWidth[0, 1] = 3000;
+                                       
+                                        try
+                                        {
+                                            //dito ilalagay ung sa mysql
+                                            var cmd = mconn.CreateCommand();
+                                            cmd.CommandType = CommandType.StoredProcedure;
+                                            cmd.CommandText = "sp_ExtractDR";
+                                            string xEbossFIle = row.ItemArray[j + 8].ToString();
+                                            cmd.Parameters.AddWithValue("_EmbossFile", xEbossFIle);
+                                            cmd.ExecuteNonQuery();
+
+                                            MySqlDataAdapter mdata = new MySqlDataAdapter(cmd);
+                                            DataTable mdt = new DataTable();
+                                            mdata.Fill(mdt);
+
+                                            worksheet.Cells[i, j + 11] = new Cell(mdt.Rows[0].ItemArray[0].ToString());
+                                            worksheet.Cells[i, j + 12] = new Cell(mdt.Rows[0].ItemArray[1].ToString());
+                                            i += 1;
+                                        }
+                                        
+                                        catch (Exception ee)
+                                        {
+                                            MessageBox.Show(ee.Message);
+                                        }
+                                    }
+                                    mconn.Close();
                                 }
                                 workbook.Worksheets.Add(worksheet);
                                 workbook.Save(file);
@@ -127,11 +181,12 @@ namespace GSIS_TASK
                                         Cell cell = row.GetCell(colIndex);
                                     }
                                 }
-                                MessageBox.Show("Exported");
+                                MessageBox.Show("File successfully processed", "Sucessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    
                             }
                             catch
                             {
-                                MessageBox.Show("Export Failed");
+                                MessageBox.Show("File failed to processed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
