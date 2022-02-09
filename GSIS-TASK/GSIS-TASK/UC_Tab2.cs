@@ -71,8 +71,8 @@ namespace GSIS_TASK
                         {
                             command.CommandType = CommandType.StoredProcedure;
                             command.CommandText = "[dbo].[spUBTable_DATE]";
-                            command.Parameters.AddWithValue("@DTPFROM", dtpFrom.Value.ToString("MM/dd/yyyy"));
-                            command.Parameters.AddWithValue("@DTPTO", dtpTo.Value.ToString("MM/dd/yyyy"));
+                            command.Parameters.AddWithValue("@DTPFROM", dtpFrom.Value.ToString("MM/dd/yyyy").Trim());
+                            command.Parameters.AddWithValue("@DTPTO", dtpTo.Value.ToString("MM/dd/yyyy").Trim());
                             command.ExecuteNonQuery();
                             conn.Close();
                             SqlDataAdapter data = new SqlDataAdapter(command);
@@ -95,7 +95,6 @@ namespace GSIS_TASK
                                 worksheet.Cells[0, 8] = new Cell("EMBOSSING FILE");
                                 worksheet.Cells[0, 9] = new Cell("STATUS 1");
                                 worksheet.Cells[0, 10] = new Cell("STATUS 2");
-                                worksheet.Cells[0, 11] = new Cell("EXTRA");
                                 int j = 0;
                                 int i = 1;
                                 //DataTable dt = new DataTable();
@@ -112,7 +111,6 @@ namespace GSIS_TASK
                                     worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
                                     worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
                                     worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
-                                    worksheet.Cells[i, j + 11] = new Cell(row.ItemArray[j + 11].ToString());
                                     worksheet.Cells.ColumnWidth[0, 1] = 3000;
                                     i += 1;
                                 }

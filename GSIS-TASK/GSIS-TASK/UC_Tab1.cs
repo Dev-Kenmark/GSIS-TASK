@@ -253,7 +253,8 @@ namespace GSIS_TASK
                                     worksheet.Cells[i, j + 8] = new Cell(row.ItemArray[j + 8].ToString());
                                     worksheet.Cells[i, j + 9] = new Cell(row.ItemArray[j + 9].ToString());
                                     worksheet.Cells[i, j + 10] = new Cell(row.ItemArray[j + 10].ToString());
-                                    worksheet.Cells[i, j + 11] = new Cell(row.ItemArray[j + 11].ToString());
+                                    //dito ilalagay ung sa mysql
+
                                     /*worksheet.Cells[i, j + 1] = new Cell(row.Cells[j + 1]?.Value?.ToString());
                                     worksheet.Cells[i, j + 2] = new Cell(row.Cells[j + 2]?.Value?.ToString()); 
                                     worksheet.Cells[i, j + 3] = new Cell(row.Cells[j + 3]?.Value?.ToString());
