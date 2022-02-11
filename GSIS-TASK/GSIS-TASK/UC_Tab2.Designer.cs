@@ -35,6 +35,7 @@ namespace GSIS_TASK
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,10 +100,19 @@ namespace GSIS_TASK
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnExport);
             this.panel1.Controls.Add(this.dtpTo);
-            this.panel1.Location = new System.Drawing.Point(175, 155);
+            this.panel1.Location = new System.Drawing.Point(158, 169);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(473, 268);
             this.panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(7, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(790, 670);
+            this.panel2.TabIndex = 10;
             // 
             // UC_Tab2
             // 
@@ -110,8 +120,9 @@ namespace GSIS_TASK
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(79)))), ((int)(((byte)(102)))));
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "UC_Tab2";
-            this.Size = new System.Drawing.Size(856, 612);
+            this.Size = new System.Drawing.Size(804, 687);
             this.Load += new System.EventHandler(this.UC_Tab2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -127,5 +138,6 @@ namespace GSIS_TASK
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

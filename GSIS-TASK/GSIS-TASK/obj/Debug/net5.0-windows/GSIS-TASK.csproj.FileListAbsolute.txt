@@ -115,3 +115,4 @@ C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-win
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\MySql.Data.dll
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\Mac\Documents\GitHub\GSIS-TASK\GSIS-TASK\GSIS-TASK\obj\Debug\net5.0-windows\GSIS_TASK.UC_Tab3.resources

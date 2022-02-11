@@ -241,7 +241,7 @@ namespace GSIS_TASK
             try
             {
                 DialogResult result = MessageBox.Show("Do you want to process an excel file?", "Import?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-               
+
                 if (result == DialogResult.Yes)
                 {
                     SaveFileDialog ofDialog = new SaveFileDialog();
@@ -345,19 +345,19 @@ namespace GSIS_TASK
                                     mconn.Close();
                                 }
 
-                                    workbook.Worksheets.Add(worksheet);
-                                    workbook.Save(file);
-                                    Workbook book = Workbook.Load(file);
-                                    Worksheet sheet = book.Worksheets[0];
+                                workbook.Worksheets.Add(worksheet);
+                                workbook.Save(file);
+                                Workbook book = Workbook.Load(file);
+                                Worksheet sheet = book.Worksheets[0];
 
-                                    for (int rowIndex = sheet.Cells.FirstRowIndex; rowIndex <= sheet.Cells.LastRowIndex; rowIndex++)
+                                for (int rowIndex = sheet.Cells.FirstRowIndex; rowIndex <= sheet.Cells.LastRowIndex; rowIndex++)
+                                {
+                                    Row row = sheet.Cells.GetRow(rowIndex);
+                                    for (int colIndex = row.FirstColIndex; colIndex <= row.LastColIndex; colIndex++)
                                     {
-                                        Row row = sheet.Cells.GetRow(rowIndex);
-                                        for (int colIndex = row.FirstColIndex; colIndex <= row.LastColIndex; colIndex++)
-                                        {
-                                            Cell cell = row.GetCell(colIndex);
-                                        }
+                                        Cell cell = row.GetCell(colIndex);
                                     }
+                                }
                                 MessageBox.Show("File successfully processed", "Sucessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             conn.Open();
@@ -367,8 +367,8 @@ namespace GSIS_TASK
                             conn.Close();
                         }
                     }
-                   }
                 }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("File failed to processed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);

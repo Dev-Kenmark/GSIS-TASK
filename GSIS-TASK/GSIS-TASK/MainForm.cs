@@ -41,6 +41,8 @@ namespace GSIS_TASK
             button1.BackColor = Color.FromArgb(255, 224, 192);
             button2.ForeColor = Color.White;
             button2.BackColor = Color.FromArgb(0, 64, 64);
+            btnTab3.ForeColor = Color.White;
+            btnTab3.BackColor = Color.FromArgb(0, 64, 64);
         } 
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,23 +53,21 @@ namespace GSIS_TASK
             button2.BackColor = Color.FromArgb(255, 224, 192);
             button1.ForeColor = Color.White;
             button1.BackColor = Color.FromArgb(0, 64, 64);
+            btnTab3.ForeColor = Color.White;
+            btnTab3.BackColor = Color.FromArgb(0, 64, 64);
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnTab3_Click(object sender, EventArgs e)
         {
+            UC_Tab3 user1 = new UC_Tab3();
+            AddUserControl(user1);
 
+            button1.ForeColor = Color.White;
+            button1.BackColor = Color.FromArgb(0, 64, 64);
+            button2.ForeColor = Color.White;
+            button2.BackColor = Color.FromArgb(0, 64, 64);
+            btnTab3.ForeColor = Color.Black;
+            btnTab3.BackColor = Color.FromArgb(255, 224, 192);
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult rs = MessageBox.Show("Do you want to exit the application?", "Exit?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -76,6 +76,7 @@ namespace GSIS_TASK
                 this.Close();
             }
         }
+
     }
 }
 

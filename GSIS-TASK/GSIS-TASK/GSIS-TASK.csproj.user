@@ -13,5 +13,8 @@
     <Compile Update="UC_Tab2.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UC_Tab3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -109,7 +109,7 @@ namespace GSIS_TASK
             // 
             // txtFileName
             // 
-            this.txtFileName.Location = new System.Drawing.Point(152, 34);
+            this.txtFileName.Location = new System.Drawing.Point(152, 35);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(442, 23);
             this.txtFileName.TabIndex = 4;
@@ -125,7 +125,7 @@ namespace GSIS_TASK
             this.panel1.Controls.Add(this.txtFileName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(7, 9);
+            this.panel1.Location = new System.Drawing.Point(7, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 670);
             this.panel1.TabIndex = 5;
@@ -141,7 +141,7 @@ namespace GSIS_TASK
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.panel1);
             this.Name = "UC_Tab1";
-            this.Size = new System.Drawing.Size(804, 687);
+            this.Size = new System.Drawing.Size(804, 690);
             this.Load += new System.EventHandler(this.UC_Tab1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
